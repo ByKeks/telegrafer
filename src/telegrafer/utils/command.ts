@@ -9,7 +9,6 @@ export const makeCommand = (commandName: string) => ({
         is_bot: false,
         first_name: 'Test',
         username: 'Test',
-        language_code: 'ru',
       },
      chat:
       {

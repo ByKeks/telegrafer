@@ -1,21 +1,22 @@
-export interface IApiCallData {
+export interface IApiCallApiData {
   chat_id: number;
-  text: string;
+  [key: string]: any;
 }
 
-export interface ICommand {
-  command(commandName: string): IReply;
-  start(): IReply;
-  help(): IReply;
-  settings(): IReply;
+export interface ICommandApi {
+  command(commandName: string): IReplyApi;
+  start(): IReplyApi;
+  help(): IReplyApi;
+  settings(): IReplyApi;
+  action(trigger: string): IReplyApi;
 }
 
-export interface IReply {
-  reply(): IApiCall;
+export interface IReplyApi {
+  reply(): IApiCallApi;
 }
 
-export interface IApiCall {
-  method(expectedMethod: string): IApiCall;
-  data(expectedData: IApiCallData): IApiCall;
-  end(cb?: () => any): ICommand;
+export interface IApiCallApi {
+  method(expectedMethod: string): IApiCallApi;
+  data(expectedData: IApiCallApiData): IApiCallApi;
+  end(cb?: () => any): ICommandApi;
 }

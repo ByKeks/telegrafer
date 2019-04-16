@@ -1,7 +1,7 @@
 import Telegraf, { ContextMessageUpdate } from 'telegraf';
 import { update } from './../telegrafer';
 
-describe('Telegrafer', () => {
+describe('Telegrafer:command', () => {
   let bot: Telegraf<ContextMessageUpdate>;
 
   beforeAll(() => {

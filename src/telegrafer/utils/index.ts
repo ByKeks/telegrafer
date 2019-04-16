@@ -1,1 +1,2 @@
-export * from './make-command';
+export * from './action';
+export * from './command';
