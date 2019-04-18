@@ -19,12 +19,12 @@ describe('Telegrafer:action', () => {
       buttonTwo =  Markup.callbackButton('Two Button', 'two');
 
       // @ts-ignore
-      bot.action('one', (ctx: ContextMessageUpdate) => {
+      bot.action(buttonOne.callback_data, (ctx: ContextMessageUpdate) => {
         return ctx.reply('Two!');
       });
 
       // @ts-ignore
-      bot.action('two', (ctx: ContextMessageUpdate) => {
+      bot.action(buttonTwo.callback_data, (ctx: ContextMessageUpdate) => {
         return ctx.reply('One!');
       });
     });

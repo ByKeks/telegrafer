@@ -1,9 +1,9 @@
 import ITelegraf, { ContextMessageUpdate } from 'telegraf';
-import { IReplyApi } from './../interfaces';
+import { Reply, Action } from './../../interfaces';
 import { makeAction } from './../utils';
 import { reply } from './../reply';
 
-export function makeActionApi(bot: ITelegraf<ContextMessageUpdate>) {
+export function makeActionApi(bot: ITelegraf<ContextMessageUpdate>): Action {
   return {
     action(trigger: string) {
       return action(bot, trigger);
@@ -11,7 +11,7 @@ export function makeActionApi(bot: ITelegraf<ContextMessageUpdate>) {
   };
 }
 
-function action(bot: ITelegraf<ContextMessageUpdate>, trigger: string): IReplyApi {
+function action(bot: ITelegraf<ContextMessageUpdate>, trigger: string): Reply {
   return {
     reply() {
       const replyApi = reply(bot);

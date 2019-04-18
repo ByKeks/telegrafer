@@ -1,14 +1,14 @@
 import ITelegraf, { ContextMessageUpdate } from 'telegraf';
 import * as assert from 'assert';
-import { mockCallApiRequest } from './methods/callApi';
-import { IApiCallApi, IApiCallApiData } from './interfaces';
+import { mockCallApiRequest } from './mocks';
+import { CallApi, CallApiData } from './../interfaces';
 
-export function reply(bot: ITelegraf<ContextMessageUpdate>): IApiCallApi {
+export function reply(bot: ITelegraf<ContextMessageUpdate>): CallApi {
   const promises: Array<Promise<any>> = [];
   const callApiRequest = mockCallApiRequest(bot);
 
   return {
-    method(this: IApiCallApi, expectedMethod: string) {
+    method(this: CallApi, expectedMethod: string) {
       promises.push(new Promise((r) => callApiRequest.then(([uri]) => {
         const parts = uri.split('/');
         const reqMethod = parts[parts.length - 1];
@@ -18,7 +18,7 @@ export function reply(bot: ITelegraf<ContextMessageUpdate>): IApiCallApi {
 
       return this;
     },
-    data(this: IApiCallApi, expectedData: IApiCallApiData) {
+    data(this: CallApi, expectedData: CallApiData) {
       promises.push(new Promise((r) => callApiRequest.then(([_, data]) => {
         assert.deepEqual(data, expectedData);
         r();

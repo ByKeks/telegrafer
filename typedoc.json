@@ -1,0 +1,21 @@
+{
+  "out": "docs",
+  "target": "ES6",
+  "mode": "modules",
+  "theme": "markdown",
+  "module": "commonjs",
+  "moduleResolution": "node",
+  "exclude": [
+    "./src/telegrafer/**/*.ts",
+    "./src/test/**/*.ts",
+    "./src/**/index.ts"
+  ],
+  "externalPattern": "**/libs/**",
+  "ignoreCompilerErrors": "true",
+  "experimentalDecorators": "true",
+  "emitDecoratorMetadata": "true",
+  "preserveConstEnums": "true",
+  "stripInternal": "true",
+  "suppressExcessPropertyErrors": "true",
+  "suppressImplicitAnyIndexErrors": "true"
+}
