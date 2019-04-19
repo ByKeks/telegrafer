@@ -1,5 +1,5 @@
 /**
- * @module Expectations
+ * @module CallApi
  */
 
 import { Command } from './command';

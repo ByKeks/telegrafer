@@ -1,9 +1,11 @@
 {
+  "name": "Telegrafer Docs",
   "out": "docs",
   "target": "ES6",
   "mode": "modules",
   "theme": "markdown",
   "module": "commonjs",
+  "readme": "none",
   "moduleResolution": "node",
   "exclude": [
     "./src/telegrafer/**/*.ts",

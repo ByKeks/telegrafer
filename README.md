@@ -1,10 +1,10 @@
-# Telegrafer
+## Telegrafer
 
-## About
+#### About
 
-The motivation with this module is to provide a high-level abstraction for testing Telegraf based applications.
+Telegrafer is a high-level abstraction for testing Telegraf based applications.
 
-## Installation
+#### Installation
 
 Using npm:
 
@@ -18,15 +18,17 @@ Using yarn:
 yarn add --dev telegrafer
 ```
 
-## Example
+#### Example
 
-```ts
-import Telegraf, { ContextMessageUpdate } from 'telegraf';
+Telegrafer is a test framework agnostic, here is an example without using any test framework at all:
+
+```js
+import Telegraf from 'telegraf';
 import { update } from 'telegrafer';
 
-const bot: Telegraf<ContextMessageUpdate> = new Telegraf('test:token');
+const bot = new Telegraf('test:token');
 
-bot.start((ctx: ContextMessageUpdate) => {
+bot.start((ctx) => {
   ctx.reply('start');
 });
 
@@ -38,4 +40,24 @@ update(bot)
   .end();
 ```
 
-## API 
+Here's an example with jest, note you must pass `done` to the `.end` call:
+
+```js
+it(`should handle "one" action`, (done) => {
+  const buttonOne = Markup.callbackButton('One Button', 'one');
+
+  bot.action(buttonOne.callback_data, (ctx) => {
+    return ctx.reply('Two!');
+  });
+
+  update(bot)
+    .action(buttonOne.callback_data)
+    .reply()
+    .method('sendMessage')
+    .data({ chat_id: 0, text: 'Two!' })
+    .end(done);
+});
+```
+
+#### Documentation
+Please see the [documentation](docs/README.md) for all supported methods

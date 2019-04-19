@@ -1,5 +1,5 @@
 /**
- * @module Telegrafer
+ * @module Action
  */
 
 import { Reply } from './reply';

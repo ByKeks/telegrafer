@@ -29,7 +29,7 @@ describe('Telegrafer:action', () => {
       });
     });
 
-    it(`should handle action "one"`, (done) => {
+    it(`should handle "one" action`, (done) => {
       update(bot)
         .action(buttonOne.callback_data)
         .reply()
@@ -41,7 +41,7 @@ describe('Telegrafer:action', () => {
         .end(done);
     });
 
-    it(`should handle action "two"`, (done) => {
+    it(`should handle "two" action`, (done) => {
       update(bot)
         .action(buttonTwo.callback_data)
         .reply()

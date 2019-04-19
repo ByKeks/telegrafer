@@ -1,5 +1,5 @@
 /**
- * @module Telegrafer
+ * @module Reply
  */
 
 import { CallApi } from './callApi';
