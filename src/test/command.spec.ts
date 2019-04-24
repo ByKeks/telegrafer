@@ -4,7 +4,7 @@ import { update } from './../telegrafer';
 describe('Telegrafer:command', () => {
   let bot: Telegraf<ContextMessageUpdate>;
 
-  beforeAll(() => {
+  beforeEach(() => {
     bot = new Telegraf('test:token');
   });
 
@@ -16,10 +16,10 @@ describe('Telegrafer:command', () => {
 
       update(bot)
         .command('start')
-        .reply()
-        .method('sendMessage')
-        .data({ chat_id: 0, text: 'start' })
-        .end(done);
+          .reply()
+            .method('sendMessage')
+            .data({ chat_id: 0, text: 'start' })
+            .end(done);
     });
   });
 
@@ -31,10 +31,10 @@ describe('Telegrafer:command', () => {
 
       update(bot)
         .command('help')
-        .reply()
-        .method('sendMessage')
-        .data({ chat_id: 0, text: 'help' })
-        .end(done);
+          .reply()
+            .method('sendMessage')
+            .data({ chat_id: 0, text: 'help' })
+            .end(done);
     });
   });
 
@@ -47,9 +47,9 @@ describe('Telegrafer:command', () => {
       update(bot)
         .command('settings')
         .reply()
-        .method('sendMessage')
-        .data({ chat_id: 0, text: 'settings' })
-        .end(done);
+          .method('sendMessage')
+          .data({ chat_id: 0, text: 'settings' })
+          .end(done);
     });
   });
 
@@ -62,9 +62,32 @@ describe('Telegrafer:command', () => {
       update(bot)
         .command('foo')
         .reply()
-        .method('sendMessage')
-        .data({ chat_id: 0, text: 'foo' })
-        .end(done);
+          .method('sendMessage')
+          .data({ chat_id: 0, text: 'foo' })
+          .end(done);
     });
+  });
+
+  describe('context', () => {
+    it(`should set "user" property to state context`, (done) => {
+      interface ContextMessageUpdateWithState extends ContextMessageUpdate {
+        state: { user: { name: string, age: number }; };
+      }
+
+      bot.command('useContext', (ctx: ContextMessageUpdateWithState) => {
+        ctx.state.user = { name: 'Alice', age: 21 };
+        ctx.reply('useContext');
+      });
+
+      update(bot)
+        .command('useContext')
+          .ctx((ctx: ContextMessageUpdateWithState) => {
+            expect(ctx.state).toMatchObject({ user: { name: 'Alice' }});
+            done();
+          })
+          .reply()
+            .method('sendMessage')
+            .data({ chat_id: 0, text: 'useContext' });
+      });
   });
 });

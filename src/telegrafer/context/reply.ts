@@ -1,7 +1,7 @@
 import ITelegraf, { ContextMessageUpdate } from 'telegraf';
 import * as assert from 'assert';
-import { mockCallApiRequest } from './mocks';
-import { CallApi, CallApiData } from './../interfaces';
+import { mockCallApiRequest } from './../mocks';
+import { CallApi, CallApiData } from './../../interfaces';
 
 export function reply(bot: ITelegraf<ContextMessageUpdate>): CallApi {
   const promises: Array<Promise<any>> = [];
@@ -30,8 +30,6 @@ export function reply(bot: ITelegraf<ContextMessageUpdate>): CallApi {
       Promise
         .all(promises)
         .then(() => cb());
-
-      return this;
     },
   };
 }

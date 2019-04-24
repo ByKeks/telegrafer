@@ -25,7 +25,7 @@
 
 **● chat_id**: *`number`*
 
-*Defined in [callApi.ts:8](https://github.com/ByKeks/telegrafer/blob/14fb429/src/interfaces/output/callApi.ts#L8)*
+*Defined in [context/callApi.ts:6](https://github.com/ByKeks/telegrafer/blob/5267544/src/interfaces/output/context/callApi.ts#L6)*
 
 ___
 

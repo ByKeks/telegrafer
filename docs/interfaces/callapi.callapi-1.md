@@ -24,7 +24,7 @@
 
 ▸ **data**(expectedData: *[CallApiData](callapi.callapidata.md)*): [CallApi](callapi.callapi-1.md)
 
-*Defined in [callApi.ts:14](https://github.com/ByKeks/telegrafer/blob/14fb429/src/interfaces/output/callApi.ts#L14)*
+*Defined in [context/callApi.ts:12](https://github.com/ByKeks/telegrafer/blob/5267544/src/interfaces/output/context/callApi.ts#L12)*
 
 **Parameters:**
 
@@ -39,9 +39,9 @@ ___
 
 ###  end
 
-▸ **end**(cb?: *`function`*): [Command](command.command-1.md)
+▸ **end**(cb?: *`function`*): `void`
 
-*Defined in [callApi.ts:15](https://github.com/ByKeks/telegrafer/blob/14fb429/src/interfaces/output/callApi.ts#L15)*
+*Defined in [context/callApi.ts:13](https://github.com/ByKeks/telegrafer/blob/5267544/src/interfaces/output/context/callApi.ts#L13)*
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ ___
 | ------ | ------ |
 | `Optional` cb | `function` |
 
-**Returns:** [Command](command.command-1.md)
+**Returns:** `void`
 
 ___
 <a id="method"></a>
@@ -58,7 +58,7 @@ ___
 
 ▸ **method**(expectedMethod: *`string`*): [CallApi](callapi.callapi-1.md)
 
-*Defined in [callApi.ts:13](https://github.com/ByKeks/telegrafer/blob/14fb429/src/interfaces/output/callApi.ts#L13)*
+*Defined in [context/callApi.ts:11](https://github.com/ByKeks/telegrafer/blob/5267544/src/interfaces/output/context/callApi.ts#L11)*
 
 **Parameters:**
 

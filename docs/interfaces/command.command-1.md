@@ -27,9 +27,9 @@ Interface for testing `command` handlers
 
 ###  command
 
-▸ **command**(commandName: *`string`*): [Reply](reply.reply-1.md)
+▸ **command**(commandName: *`string`*): [Context](context.context-1.md)
 
-*Defined in [command.ts:12](https://github.com/ByKeks/telegrafer/blob/14fb429/src/interfaces/output/command.ts#L12)*
+*Defined in [methods/command.ts:13](https://github.com/ByKeks/telegrafer/blob/5267544/src/interfaces/output/methods/command.ts#L13)*
 
 **Parameters:**
 
@@ -37,40 +37,40 @@ Interface for testing `command` handlers
 | ------ | ------ |
 | commandName | `string` |
 
-**Returns:** [Reply](reply.reply-1.md)
+**Returns:** [Context](context.context-1.md)
 
 ___
 <a id="help"></a>
 
 ###  help
 
-▸ **help**(): [Reply](reply.reply-1.md)
+▸ **help**(): [Context](context.context-1.md)
 
-*Defined in [command.ts:14](https://github.com/ByKeks/telegrafer/blob/14fb429/src/interfaces/output/command.ts#L14)*
+*Defined in [methods/command.ts:15](https://github.com/ByKeks/telegrafer/blob/5267544/src/interfaces/output/methods/command.ts#L15)*
 
-**Returns:** [Reply](reply.reply-1.md)
+**Returns:** [Context](context.context-1.md)
 
 ___
 <a id="settings"></a>
 
 ###  settings
 
-▸ **settings**(): [Reply](reply.reply-1.md)
+▸ **settings**(): [Context](context.context-1.md)
 
-*Defined in [command.ts:15](https://github.com/ByKeks/telegrafer/blob/14fb429/src/interfaces/output/command.ts#L15)*
+*Defined in [methods/command.ts:16](https://github.com/ByKeks/telegrafer/blob/5267544/src/interfaces/output/methods/command.ts#L16)*
 
-**Returns:** [Reply](reply.reply-1.md)
+**Returns:** [Context](context.context-1.md)
 
 ___
 <a id="start"></a>
 
 ###  start
 
-▸ **start**(): [Reply](reply.reply-1.md)
+▸ **start**(): [Context](context.context-1.md)
 
-*Defined in [command.ts:13](https://github.com/ByKeks/telegrafer/blob/14fb429/src/interfaces/output/command.ts#L13)*
+*Defined in [methods/command.ts:14](https://github.com/ByKeks/telegrafer/blob/5267544/src/interfaces/output/methods/command.ts#L14)*
 
-**Returns:** [Reply](reply.reply-1.md)
+**Returns:** [Context](context.context-1.md)
 
 ___
 

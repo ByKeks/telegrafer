@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "strictBindCallApply": true,
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,

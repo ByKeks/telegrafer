@@ -1,12 +1,12 @@
 import ITelegraf, { ContextMessageUpdate } from 'telegraf';
-import { Reply, Command } from './../../interfaces';
+import { Command } from './../../interfaces';
+import { contextApi } from './../context';
 import { makeCommand } from './../utils';
-import { reply } from './../reply';
 
 export function makeCommandApi(bot: ITelegraf<ContextMessageUpdate>): Command {
   return {
     command(commandName: string) {
-      return command(bot, commandName);
+      return contextApi(bot, makeCommand(commandName));
     },
     start() {
       return this.command('start');
@@ -16,16 +16,6 @@ export function makeCommandApi(bot: ITelegraf<ContextMessageUpdate>): Command {
     },
     settings() {
       return this.command('settings');
-    },
-  };
-}
-
-function command(bot: ITelegraf<ContextMessageUpdate>, commandName: string): Reply {
-  return {
-    reply() {
-      const replyApi = reply(bot);
-      bot.handleUpdate(makeCommand(commandName));
-      return replyApi;
     },
   };
 }

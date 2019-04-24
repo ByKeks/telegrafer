@@ -2,12 +2,12 @@
  * @module Action
  */
 
-import { Reply } from './reply';
+import { Context } from './../context';
 
 /**
  * Interface for testing `action` handlers
  * @Telegraf https://telegraf.js.org/#/?id=action
  */
 export interface Action {
-  action(trigger: string): Reply;
+  action(trigger: string): Context;
 }

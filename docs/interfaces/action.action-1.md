@@ -24,9 +24,9 @@ Interface for testing `action` handlers
 
 ###  action
 
-▸ **action**(trigger: *`string`*): [Reply](reply.reply-1.md)
+▸ **action**(trigger: *`string`*): [Context](context.context-1.md)
 
-*Defined in [action.ts:12](https://github.com/ByKeks/telegrafer/blob/14fb429/src/interfaces/output/action.ts#L12)*
+*Defined in [methods/action.ts:12](https://github.com/ByKeks/telegrafer/blob/5267544/src/interfaces/output/methods/action.ts#L12)*
 
 **Parameters:**
 
@@ -34,7 +34,7 @@ Interface for testing `action` handlers
 | ------ | ------ |
 | trigger | `string` |
 
-**Returns:** [Reply](reply.reply-1.md)
+**Returns:** [Context](context.context-1.md)
 
 ___
 
