@@ -2,6 +2,6 @@
  * @module Update
  */
 
-import { Action, Command } from './methods';
+import { Action, Command, Hears } from './methods';
 
-export type Telegrafer = Action & Command;
+export type Telegrafer = Action & Command & Hears;
