@@ -4,7 +4,7 @@ import { mockCallApiRequest } from './../mocks';
 import { CallApi, CallApiData } from './../../interfaces';
 
 export function reply(bot: ITelegraf<ContextMessageUpdate>): CallApi {
-  const promises: Array<Promise<any>> = [];
+  const promises: Promise<any>[] = [];
   const callApiRequest = mockCallApiRequest(bot);
 
   return {

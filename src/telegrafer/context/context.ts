@@ -11,7 +11,7 @@ export function contextApi(bot: ITelegraf<ContextMessageUpdate>, update: Update)
     ctx(this: Context, middleware: ContextMiddleware) {
       const { ctx } = useHandleUpdate();
 
-      const promises: Array<Promise<any>> = [];
+      const promises: Promise<any>[] = [];
 
       setTimeout(() => middleware(ctx), 0);
 

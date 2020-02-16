@@ -1,5 +1,5 @@
 // @ts-ignore
-import * as TelegrafContext from 'telegraf/core/context';
+import * as TelegrafContext from 'telegraf/context';
 import ITelegraf, { ContextMessageUpdate } from 'telegraf';
 import { Update } from 'telegraf/typings/telegram-types';
 
