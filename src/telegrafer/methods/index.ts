@@ -1,3 +1,3 @@
 export * from './action';
 export * from './command';
-export * from './hears';
+export * from './message';
